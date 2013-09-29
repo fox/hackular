@@ -5,3 +5,4 @@ hackular.config(function($routeProvider) {
     $routeProvider.when("/article/:url", { templateUrl: "partials/article.html", controller: "ArticleCtrl" })
     $routeProvider.otherwise({ redirectTo: "/" })
 })
+

@@ -11,6 +11,6 @@ hackular.controller("FeedCtrl", function($scope, $location, api) {
 hackular.controller("ArticleCtrl", function($scope, $routeParams, api) {
     $scope.url = decodeURIComponent($routeParams.url)
     $scope.openInBrowser = function() {
-        window.location.href = $scope.url
+        window.open($scope.url, '_blank', 'location=yes');
     }
 })

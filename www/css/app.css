@@ -1,0 +1,8 @@
+.open-in-browser {
+  background: url("img/open-in-browser.png") no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  height:23px;
+  width:23px;
+}

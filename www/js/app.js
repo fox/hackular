@@ -40,4 +40,8 @@ hackular.controller("ArticleCtrl", function($scope, $routeParams, api) {
     api.article(url).success(function(article) {
         $scope.article = article
     })
+    
+    $scope.openInBrowser = function() {
+        window.location.href = url
+    }
 })

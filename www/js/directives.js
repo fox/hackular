@@ -14,3 +14,19 @@ hackular.directive("article", function() {
     };
 });
 
+hackular.directive("platform", function() {
+    return {
+        restrict: 'C',
+        link: function(scope, element, attrs) {
+            var className;
+            if (/(iPad|iPhone|iPod)/g.test(navigator.userAgent)) {
+                element[0].className += ' ios'
+                if (/OS 7/.test(navigator.userAgent)) {
+                    element[0].className += ' ios-7'    
+                }
+            } else if (/Android/g.test(navigator.userAgent)) {
+                element[0].className += ' android'
+            }
+        }
+    };
+});

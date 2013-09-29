@@ -3,9 +3,11 @@
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
-  height:23px;
-  width:23px;
+  height: 20px;
+  width: 20px;
 }
+
+/* animation */
 
 .slide-enter, .slide-leave {
   -webkit-transition: 300ms cubic-bezier(0.075, 0.820, 0.165, 1.000) all;
@@ -28,4 +30,21 @@
 
 .slide-leave.slide-leave-active{
     left: -200px;
+}
+
+/* ios 7 tweaks */
+
+.ios-7 .bar-title {
+  height: 64px;
+}
+
+.ios-7 .bar-title ~ .content {
+  top: 64px;
+}
+
+.ios-7 .bar-title>* {
+  top: 20px !important;
+}
+.ios-7 .bar-title>button:last-child {
+  top: 28px !important;
 }

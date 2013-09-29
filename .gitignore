@@ -31,3 +31,10 @@ Thumbs.db
 .Trashes
 ._*
 logs/*
+*.apk
+*.app
+*.dex
+*.ap_
+R.java
+bin
+build/*

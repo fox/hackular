@@ -2,6 +2,7 @@ var hackular = angular.module('hackular', [])
 
 hackular.config(function($routeProvider) {
     $routeProvider.when("/", { templateUrl: "partials/feed.html", controller: "FeedCtrl" })
+    $routeProvider.when("/article/:url", { templateUrl: "partials/article.html", controller: "ArticleCtrl" })
     $routeProvider.otherwise({ redirectTo: "/" })
 })
 
@@ -14,8 +15,15 @@ hackular.factory("api", function($http) {
 	}
 })
 
-hackular.controller("FeedCtrl", function($scope, api) {
+hackular.controller("FeedCtrl", function($scope, $location, api) {
     api.news().success(function(feed) {
         $scope.items = feed.results
     })
+    
+    $scope.onItemClick = function(item) {
+        $location.path("/article/" + encodeURIComponent(item.url))
+    }
+})
+
+hackular.controller("ArticleCtrl", function() {
 })

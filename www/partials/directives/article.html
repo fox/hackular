@@ -1,0 +1,10 @@
+<div>
+    <div ng-show="!article">
+        Loading...
+    </div>
+    <div ng-show="article">
+        <h2>{{article.title}}</h2>
+        <em>{{article.author}}</em>
+        <p ng-bind-html-unsafe="article.content"></p>
+    </div>
+</div>

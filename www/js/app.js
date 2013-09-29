@@ -36,12 +36,25 @@ hackular.controller("FeedCtrl", function($scope, $location, api) {
 })
 
 hackular.controller("ArticleCtrl", function($scope, $routeParams, api) {
-    var url = decodeURIComponent($routeParams.url)
-    api.article(url).success(function(article) {
-        $scope.article = article
-    })
-    
+    $scope.url = decodeURIComponent($routeParams.url)
     $scope.openInBrowser = function() {
-        window.location.href = url
+        window.location.href = $scope.url
     }
 })
+
+hackular.directive("article", function() {
+    return {
+        restrict: 'E',
+        scope: {
+            url: '@'
+        },
+        replace: true,
+        templateUrl: "partials/directives/article.html",
+        controller: function($scope, api) {
+            api.article($scope.url).success(function(article) {
+                $scope.article = article
+            })  
+        }
+    };
+});
+

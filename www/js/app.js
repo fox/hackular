@@ -38,7 +38,6 @@ hackular.controller("FeedCtrl", function($scope, $location, api) {
 hackular.controller("ArticleCtrl", function($scope, $routeParams, api) {
     var url = decodeURIComponent($routeParams.url)
     api.article(url).success(function(article) {
-        console.debug(article)
+        $scope.article = article
     })
-    
 })

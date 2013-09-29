@@ -3,5 +3,17 @@
 </header>
 
 <div class="content">
-Hello!
+    <ul class="list">
+      <li ng-show="!items">
+          Loading...
+      </li>
+      <li ng-show="items" ng-repeat="item in items">
+          <span>
+               <strong>{{item.title}}</strong>
+               <br />{{item.domain}}
+          </span>
+          <span class="chevron"></span>
+          <span class="count">{{item.comments}}</span>
+      </li>
+    </ul>
 </div>

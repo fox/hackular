@@ -14,8 +14,8 @@ hackular.factory("api", function($http) {
 	}
 })
 
-hackular.controller("FeedCtrl", function(api) {
+hackular.controller("FeedCtrl", function($scope, api) {
     api.news().success(function(feed) {
-        console.debug(feed)
+        $scope.items = feed.results
     })
 })
